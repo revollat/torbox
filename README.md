@@ -8,9 +8,9 @@ So we can mount the config file "torrc" and the ".tor" directory in the containe
 
 3/ If you want, you can customize tor config (```torrc``` file) 
 
-* Nicknamei
+* Nickname
 * bandwidth
-* port number  ... o make your relay work make sure the configured ORPort is accessible from outside comment ORPort line it if you don't want a relay and just want to use the tor proxy.
+* ports number  ... o make your relay work make sure the configured ORPort is accessible from outside comment ORPort line it if you don't want a relay and just want to use the tor proxy.
 
 4/
 Run the container 
