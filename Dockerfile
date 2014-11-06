@@ -5,11 +5,11 @@ MAINTAINER Olivier Revollat <olivier@revollat.net>
 ENV VERSION 0.2.5.10
 
 RUN apt-get update
-RUN apt-get install -y curl build-essential libevent-dev libssl-dev vim
+RUN apt-get install -y curl build-essential libevent-dev libssl-dev vim procps
 
 ENV HOME /home/tor
-RUN groupadd -g 220 tor 
-RUN useradd -u 220 -g 220 -c "The Onion Router" -d ${HOME} -s /bin/bash tor
+RUN groupadd -g 1000 tor 
+RUN useradd -u 1000 -g 1000 -c "The Onion Router" -d ${HOME} -s /bin/bash tor
 RUN mkdir -p ${HOME}
 RUN chown -R tor:tor ${HOME}
 
@@ -26,16 +26,5 @@ RUN ./configure \
 RUN make && make install
 RUN rm -rf /tmp/tor-${VERSION}
 
-USER root
-ADD start-tor.sh /start-tor
-ADD ./torrc /home/tor/etc/torrc
-RUN echo "Nickname tor$(head -c 16 /dev/urandom  | sha1sum | cut -c1-10)" >> ${HOME}/etc/torrc
-#RUN echo "User tor" >> ${HOME}/etc/torrc
-RUN chown tor:tor /home/tor/etc/torrc
-
-# Allow you to upgrade your relay without having to regenerate keys
-VOLUME ${HOME}/.tor
-
 WORKDIR ${HOME}
-
-CMD ["bash", "/start-tor"]
+CMD bin/tor -f etc/torrc

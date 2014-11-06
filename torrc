@@ -1,6 +1,6 @@
 SocksPort 127.0.0.1:9150
 Log notice stdout
 ExitPolicy reject *:*
+RelayBandwidthRate 100 KB
+RelayBandwidthBurst 200 KB
 ORPort 9090
-#ORPort 8080 NoListen
-#ORPort 127.0.0.1:9090 NoAdvertise
