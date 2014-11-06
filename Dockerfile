@@ -27,4 +27,5 @@ RUN make && make install
 RUN rm -rf /tmp/tor-${VERSION}
 
 WORKDIR ${HOME}
-CMD bin/tor -f etc/torrc
+#CMD bin/tor -f etc/torrc
+CMD ["bin/tor","-f","etc/torrc"]
