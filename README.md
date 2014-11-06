@@ -4,7 +4,9 @@ Usage
 1/ In the Dockerfile make sure that UID and GID is the same as your user (you can find out with the "```id```" command)
 So we can mount the config file "torrc" and the ".tor" directory in the container without privileges problems.
 
-2/ Build the image docker build -t torbox .
+2/ Build the image 
+
+```docker build -t torbox .```
 
 3/ If you want, you can customize tor config (```torrc``` file) 
 
