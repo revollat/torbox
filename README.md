@@ -65,10 +65,10 @@ DisableDebuggerAttachment 0
 ```
 3/ Run arm with :
 
-docker exec -it torbox bash
+```docker exec -it torbox bash```
 
 and then :
 
-arm -i 9151
+```arm -i 9151```
 
 Put the password you used before to generate a hash, and enjoy :)
