@@ -17,7 +17,7 @@ So we can mount the config file "torrc" and the ".tor" directory in the containe
 4/
 Run the container :
 
-docker run -dt --name=torbox --net=host -v /etc/localtime:/etc/localtime:ro -v $PWD/dottor:/home/tor/.tor -v $PWD/torrc:/home/tor/etc/torrc torbox
+```docker run -dt --name=torbox --net=host -v /etc/localtime:/etc/localtime:ro -v $PWD/dottor:/home/tor/.tor -v $PWD/torrc:/home/tor/etc/torrc torbox```
 
 In case you get an error with the previous command, you should delete the previous exited torbox container, because the container already exist with the same name, so just do :
 
