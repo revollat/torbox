@@ -33,7 +33,7 @@ To stop torbox, just do a :
 Check the logs
 ==============
 
-```  ```
+```docker logs torbox```
 
 Reload the configuration while running
 ======================================
