@@ -1,6 +1,32 @@
+#Nickname CustomizeRelayName
+
+DataDirectory /home/tor/.tor
+
+# Tor proxy (for example point your internet browser to socks5 127.0.0.1:9150 in network configuration)
 SocksPort 127.0.0.1:9150
+
+# Tor relay
+ORPort 9090
+
+#Loggin on stdout so you can chek this whenever you want with : 'docker logs torbox' command
 Log notice stdout
+
+# Exit policy
 ExitPolicy reject *:*
+
+# Bandwidth
 RelayBandwidthRate 100 KB
 RelayBandwidthBurst 200 KB
-ORPort 9090
+
+#To use arm monitor you have to generate a password with
+#bin/tor --hash-password mystrongpassword1234
+#put the result here and uncomment the 3 following lines
+#HashedControlPassword 16:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+#ControlPort 9151
+#DisableDebuggerAttachment 0 # this is for connexion information, see https://www.torproject.org/docs/tor-manual.html.en#DisableDebuggerAttachment
+
+# Uncomment this if you want to be a bridge too
+# BridgeRelay 1
+
+#HiddenServiceDir /home/tor/var/lib/tor/hidden_service/
+#HiddenServicePort 80 127.0.0.1:80

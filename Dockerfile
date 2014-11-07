@@ -5,7 +5,7 @@ MAINTAINER Olivier Revollat <olivier@revollat.net>
 ENV VERSION 0.2.5.10
 
 RUN apt-get update
-RUN apt-get install -y curl build-essential libevent-dev libssl-dev vim procps
+RUN apt-get install -y curl build-essential libevent-dev libssl-dev vim procps tor-arm
 
 ENV HOME /home/tor
 RUN groupadd -g 1000 tor 
