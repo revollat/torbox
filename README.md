@@ -54,7 +54,7 @@ While your torbox container is running, do :
 
 ```docker exec -it torbox bin/tor --hash-password mystrongpassword1234```
 
-Oobviously use a stronger password :) You will get something like : 16:E093DB61ADB04B8A606D0B0635C5AF4CB8EAB997B97CA88AAA3D20CAED
+Obviously use a stronger password :) You will get something like : 16:E093DB61ADB04B8A606D0B0635C5AF4CB8EAB997B97CA88AAA3D20CAED
 
 2/ Edit your ```torrc``` and uncomment the following lines, and put you hased password on the ```HashedControlPassword``` line :
 
